@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="cart">
+      <section class="cart-inner-1">
+        <div class="custom-btn">
+          <img
+            src="./assets/icons/arrow.png"
+            alt="Arrow icon"
+            class="btn-icon"
+          />
+          <span class="btn-text">Shopping Continue</span>
+        </div>
+        <hr class="separator" />
+        <div class="cart-inner-box">
+          <h1 class="title">Shopping cart</h1>
+          <h2 class="subtitle" id="quantity">You have 3 items in your cart</h2>
+        </div>
+        <div class="cart-container" id="cart-container"></div>
+      </section>
+      <aside class="cart-inner-2">
+        <div class="cart-inner-2-top">
+          <h1 class="card-title">Card Details</h1>
+          <div class="profile-picture-box">
+            <img
+              src="./assets/images/profile.jpg"
+              alt="Profile picture"
+              class="profile-picture"
+            />
+          </div>
+        </div>
+        <h2 class="field-title">Card type</h2>
+        <div class="grid-container">
+          <div class="grid-item">
+            <img src="./assets/images/mastercard.png" alt="Mastercard" />
+          </div>
+          <div class="grid-item">
+            <img src="./assets/images/visa.png" alt="Visa" />
+          </div>
+          <div class="grid-item">
+            <img src="./assets/images/rupay.png" alt="Rupay" />
+          </div>
+          <div class="grid-item">See all</div>
+        </div>
+        <div class="textfield-row">
+          <label for="name-on-card" class="field-title">Name on card</label>
+          <input
+            id="name-on-card"
+            type="text"
+            class="custom-textfield"
+            placeholder="Name"
+            pattern="^[A-Z\s]+$"
+            title="Name should be only capital letters and spaces"
+            required
+          />
+          <div
+            id="name-on-card-error"
+            class="error-message"
+            aria-live="polite"
+          ></div>
+        </div>
+        <div class="textfield-row">
+          <label for="card-number" class="field-title">Card Number</label>
+          <input
+            id="card-number"
+            type="text"
+            class="custom-textfield"
+            placeholder="1111 2222 3333 4444"
+            pattern="^\d{4}\s?\d{4}\s?\d{4}\s?\d{4}$"
+            title="Card number should be exactly 16 digits, with or without spaces"
+            required
+          />
+          <div
+            id="card-number-error"
+            class="error-message"
+            aria-live="polite"
+          ></div>
+        </div>
+        <div class="date-row">
+          <div>
+            <label for="expiration-date" class="field-title"
+              >Expiration date</label
+            >
+            <input
+              id="expiration-date"
+              type="text"
+              class="custom-textfield"
+              placeholder="mm/yy"
+              pattern="^(0[1-9]|1[0-2])\/\d{2}$"
+              title="Expiration date should be in the format mm/yy"
+              required
+            />
+            <div
+              id="expiration-date-error"
+              class="error-message"
+              aria-live="polite"
+            ></div>
+          </div>
+          <div>
+            <label for="cvv" class="field-title">CVV</label>
+            <input
+              id="cvv"
+              type="text"
+              class="custom-textfield"
+              placeholder="123"
+              pattern="^\d{3}$"
+              title="CVV should be exactly 3 digits"
+              required
+            />
+            <div id="cvv-error" class="error-message" aria-live="polite"></div>
+          </div>
+        </div>
+        <hr class="checkout-separator" />
+        <div class="checkout-row">
+          <h2 class="field-title">Subtotal</h2>
+          <h2 class="field-title" id="total-cost"></h2>
+        </div>
+        <div class="checkout-row">
+          <h2 class="field-title">Shipping</h2>
+          <h2 class="field-title" id="shipping"></h2>
+        </div>
+        <div class="checkout-row">
+          <h2 class="field-title">Total (Tax incl.)</h2>
+          <h2 class="field-title" id="total-tax-incl"></h2>
+        </div>
+        <button class="checkout-btn" id="checkout-btn">
+          <span class="total" id="total-tax-incl-2"></span>
+          <div class="checkout-btn-inner">
+            <span class="btn-text">Checkout</span>
+            <img
+              src="./assets/icons/arrow-white.png"
+              alt="Arrow icon"
+              class="checkout-btn-icon"
+            />
+          </div>
+        </button>
+      </aside>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
